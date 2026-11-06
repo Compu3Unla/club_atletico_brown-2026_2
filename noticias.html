@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Atlético Brown</title>
+  <link href="estilos.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="cabecera">
+    <nav class="nav-index">
+
+      <a href="index.html" class="enlace-inicio">
+        <img src="imgs/nav/logo-nav.svg" alt="Logo Club Atlético Brown" width="57" height="58" class="logo-club">
+      </a>
+
+      <ul class="lista-menu">
+
+        <li class="has-dropdown item-club-dropdown">
+          <a href="#club" class="dropdown-toggle">
+            CLUB
+            <img src="imgs/nav/flecha.svg" alt="" class="icono-flecha" width="12" height="6">
+          </a>
+          <div class="dropdown-club">
+            <ul>
+              <li><a href="club-historia.html">HISTORIA</a></li>
+              <li><a href="#instalaciones">INSTALACIONES</a></li>
+              <li><a href="#disciplina">DISCIPLINA</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="has-dropdown item-futbol-dropdown">
+          <a href="#futbol" class="dropdown-toggle">
+            FÚTBOL
+            <img src="imgs/nav/flecha.svg" alt="" class="icono-flecha">
+          </a>
+          <div class="dropdown-futbol">
+            <ul>
+              <li><a href="futbol-plantel.html">PLANTEL</a></li>
+              <li><a href="#palmares">PALMARES</a></li>
+              <li><a href="#ascenso">ASCENSO</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item-noticias">
+          <a href="noticias.html">NOTICIAS</a>
+        </li>
+
+        <li class="has-dropdown item-socios-dropdown">
+          <a href="#socios" class="dropdown-toggle">
+            SOCIOS
+            <img src="imgs/nav/flecha.svg" alt="" class="icono-flecha">
+          </a>
+          <div class="dropdown-socios">
+            <ul>
+              <li><a href="#ingresar">INGRESAR</a></li>
+              <li><a href="#beneficios">BENEFICIOS</a></li>
+              <li><a href="#preguntas">PREGUNTAS</a></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+
+      <ul class="botones-nav">
+        <li class="boton-tienda"><a href="shop.html">TIENDA</a></li>
+        <li class="boton-hacete-socio"><a href="#socios.html">HACETE SOCIO</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- Acá comienza el main -->
+        <main class="body-noticias">
+            <div class="encabezado">
+                <h1 class="titulo-pagina">NOTICIAS</h1>
+                <a href="index.html" class="boton-volver">Volver al inicio</a>
+            </div>
+            <hr class="separador"></hr>
+            <section class="contenido-noticias">
+                <div class="columna-izquierda">
+                    <div class="noticias-destacadas">
+                        <article class="tarjeta-destacada">
+                            <div class="imagen-tarjeta">
+                                <img src="imgs/noticias/noticia-partido.png" alt="Los 3 puntos en casa">
+                                <h2 class="etiqueta-titulo">LOS 3 PUNTOS EN CASA</h2>
+                            </div>
+                            <p class="bajada">El Trico volvió al triunfo contra Cambaceres luego de una racha negativa de dos partidos sin ganar.</p>
+                        </article>
+                        <article class="tarjeta-destacada">
+                            <div class="imagen-tarjeta">
+                                <img src="imgs/noticias/noticia-silva.png" alt="El Tanque trae goles">
+                                <h2 class="etiqueta-titulo">EL TANQUE TRAE GOLES</h2>
+                            </div>
+                            <p class="bajada">Tras encontrarse retirado durante casi tres años, el Tanque Silva regresa a las canchas y trae calidad de primera al Trico.</p>
+                        </article>
+                    </div>
+                    <div class="noticias-secundarias">
+                        <article class="tarjeta-secundaria">
+                          <a href="noticias-tanque-silva.html">
+                              <img src="imgs/noticias/noticia-vico.png" alt="¡Hola Pablo!">
+                              <h3 class="titulo-secundario">¡Hola Pablo!</h3>
+                          </a>
+                        </article>
+                        <article class="tarjeta-secundaria">
+                            <img src="imgs/noticias/noticia-elecciones.png" alt="Elecciones en el club">
+                            <h3 class="titulo-secundario">Elecciones en el club: Ganó “Brown Unido”</h3>
+                        </article>
+                        <article class="tarjeta-secundaria">
+                            <img src="imgs/noticias/noticia-sum.png" alt="Tenemos nuevo SUM">
+                            <h3 class="titulo-secundario">Tenemos nuevo SUM</h3>
+                        </article>
+                        <article class="tarjeta-secundaria">
+                            <img src="imgs/noticias/noticia-chiqui.png" alt="Chiqui Tapia pasó por nuestras instalaciones">
+                                <h3 class="titulo-secundario">Chiqui Tapia pasó por nuestras instalaciones</h3>
+                        </article>
+                    </div>
+                </div>
+                <aside class="columna-derecha">
+                    <a href="shop.html" class="enlace-banner">
+                        <img class="banner-socios" src="imgs/noticias/banner-asociate.png" alt="Somos del Trico - Asociate">
+                    </a>
+                </aside>       
+            </section>
+        </main>
+        <footer class="footer-index">
+
+    <div class="animation-footer">
+      <div class="items-animacion-footer">
+        <img src="imgs/footer/sponsors/mi-cabana-logo.svg" alt="Mi Cabaña Longchamps" class="sponsor-logo" width="143"
+          height="43">
+        <img src="imgs/footer/sponsors/colorshop-logo.svg" alt="Colorshop" class="sponsor-logo" width="147" height="35">
+        <img src="imgs/footer/sponsors/fanaticos-logo.svg" alt="Fanáticos" class="sponsor-logo" width="138" height="60">
+        <img src="imgs/footer/sponsors/union-ganadera-logo.svg" alt="Unión Ganadera" class="sponsor-logo" width="100"
+          height="69">
+        <img src="imgs/footer/sponsors/seven-sport-logo.svg" alt="Seven Sport" class="sponsor-logo" width="109"
+          height="64">
+        <img src="imgs/footer/sponsors/pureza-de-las-sierras-logo.svg" alt="Pureza de las Sierras" class="sponsor-logo"
+          width="83" height="81">
+        <img src="imgs/footer/sponsors/sportsbet-logo.svg" alt="Sportsbet.io" class="sponsor-logo" width="169"
+          height="35">
+
+        <!-- Duplicado para el scroll infinito de los sponsors -->
+        <img src="imgs/footer/sponsors/mi-cabana-logo.svg" alt="Mi Cabaña Longchamps" class="sponsor-logo" width="143"
+          height="43">
+        <img src="imgs/footer/sponsors/colorshop-logo.svg" alt="Colorshop" class="sponsor-logo" width="147" height="35">
+        <img src="imgs/footer/sponsors/fanaticos-logo.svg" alt="Fanáticos" class="sponsor-logo" width="138" height="60">
+        <img src="imgs/footer/sponsors/union-ganadera-logo.svg" alt="Unión Ganadera" class="sponsor-logo" width="100"
+          height="69">
+        <img src="imgs/footer/sponsors/seven-sport-logo.svg" alt="Seven Sport" class="sponsor-logo" width="109"
+          height="64">
+        <img src="imgs/footer/sponsors/pureza-de-las-sierras-logo.svg" alt="Pureza de las Sierras" class="sponsor-logo"
+          width="83" height="81">
+        <img src="imgs/footer/sponsors/sportsbet-logo.svg" alt="Sportsbet.io" class="sponsor-logo" width="169"
+          height="35">
+      </div>
+    </div>
+
+    <section class="info-footer">
+      <hr class="separador-footer">
+
+      <div class="contenido-footer">
+        <p class="copyright-footer">
+          ClubAtleticoBrown.com | Sitio Web Oficial | Bartolomé Cerretti 868 - Adrogué<br>
+          4214-6186 | info@clubatleticobrown.com
+        </p>
+
+        <div class="redes-sociales">
+
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="enlace-logo-instagram"
+            aria-label="Instagram">
+            <img src="imgs/footer/icon-rrss/icon-nav-instagram-off.svg" alt="" class="icono-default" width="38px"
+              height="38px">
+            <img src="imgs/footer/icon-rrss/icon-nav-instagram-on.svg" alt="" class="icono-hover" width="38px"
+              height="38px">
+          </a>
+
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="enlace-logo-facebook"
+            aria-label="Facebook">
+            <img src="imgs/footer/icon-rrss/icon-nav-facebook-off.svg" alt="" class="icono-default" width="38px"
+              height="38px">
+            <img src="imgs/footer/icon-rrss/icon-nav-facebook-on.svg" alt="" class="icono-hover" width="38px"
+              height="38px">
+          </a>
+
+          <a href="https://x.com" target="_blank" rel="noopener" class="enlace-logo-x" aria-label="X">
+            <img src="imgs/footer/icon-rrss/icon-nav-x-off.svg" alt="" class="icono-default" width="38px" height="38px">
+            <img src="imgs/footer/icon-rrss/icon-nav-x-on.svg" alt="" class="icono-hover" width="38px" height="38px">
+          </a>
+
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="enlace-logo-youtube" aria-label="YouTube">
+            <img src="imgs/footer/icon-rrss/icon-nav-youtube-off.svg" alt="" class="icono-default" width="38px"
+              height="38px">
+            <img src="imgs/footer/icon-rrss/icon-nav-youtube-on.svg" alt="" class="icono-hover" width="38px"
+              height="38px">
+          </a>
+
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="enlace-logo-tiktok" aria-label="TikTok">
+            <img src="imgs/footer/icon-rrss/icon-nav-tiktok-off.svg" alt="" class="icono-default" width="38px"
+              height="38px">
+            <img src="imgs/footer/icon-rrss/icon-nav-tiktok-on.svg" alt="" class="icono-hover" width="38px"
+              height="38px">
+          </a>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+</body>
+</html>
