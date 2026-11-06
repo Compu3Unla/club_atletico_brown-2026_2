@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anorak CAB - Club Atlético Brown</title>
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="pagina-producto">
+
+    <header class="cabecera">
+    <nav class="nav-index">
+
+      <a href="index.html" class="enlace-inicio">
+        <img src="imgs/nav/logo-nav.svg" alt="Logo Club Atlético Brown" width="57" height="58" class="logo-club">
+      </a>
+
+      <ul class="lista-menu">
+
+        <li class="has-dropdown item-club-dropdown">
+          <a href="#club" class="dropdown-toggle">
+            CLUB
+            <img src="imgs/nav/flecha.svg" alt="" class="icono-flecha" width="12" height="6">
+          </a>
+          <div class="dropdown-club">
+            <ul>
+              <li><a href="club-historia.html">HISTORIA</a></li>
+              <li><a href="#instalaciones">INSTALACIONES</a></li>
+              <li><a href="#disciplina">DISCIPLINA</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="has-dropdown item-futbol-dropdown">
+          <a href="#futbol" class="dropdown-toggle">
+            FÚTBOL
+            <img src="imgs/nav/flecha.svg" alt="" class="icono-flecha">
+          </a>
+          <div class="dropdown-futbol">
+            <ul>
+              <li><a href="futbol-plantel.html">PLANTEL</a></li>
+              <li><a href="#palmares">PALMARES</a></li>
+              <li><a href="#ascenso">ASCENSO</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item-noticias">
+          <a href="noticias.html">NOTICIAS</a>
+        </li>
+
+        <li class="has-dropdown item-socios-dropdown">
+          <a href="#socios" class="dropdown-toggle">
+            SOCIOS
+            <img src="imgs/nav/flecha.svg" alt="" class="icono-flecha">
+          </a>
+          <div class="dropdown-socios">
+            <ul>
+              <li><a href="#ingresar">INGRESAR</a></li>
+              <li><a href="#beneficios">BENEFICIOS</a></li>
+              <li><a href="#preguntas">PREGUNTAS</a></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+
+      <ul class="botones-nav">
+        <li class="boton-tienda"><a href="shop.html">TIENDA</a></li>
+        <li class="boton-hacete-socio"><a href="#socios.html">HACETE SOCIO</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+    <header class="pd-header">
+        <nav class="pd-nav">
+            <ul class="pd-menu">
+                <li><a href="#">ENVIOS</a></li>
+                <li><a href="shop.html">PRODUCTOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+            <a href="#" class="pd-carrito">
+                <img src="imgs/shop-anorak/boton-carrito.png" alt="Carrito">
+            </a>
+        </nav>
+    </header>
+
+    <main class="pd-container">
+
+        <!-- Miniaturas -->
+        <div class="pd-miniaturas">
+            <button type="button" class="pd-mini" data-index="1">
+                <img src="imgs/shop-anorak/anorak-detalle-1.png" alt="Anorak detalle 1">
+            </button>
+            <button type="button" class="pd-mini" data-index="2">
+                <img src="imgs/shop-anorak/anorak-detalle-2.png" alt="Anorak detalle 2">
+            </button>
+        </div>
+
+        <!-- Imagen principal -->
+        <div class="pd-principal" id="principal">
+            <img src="imgs/shop-anorak/anorak.png" alt="Anorak CAB">
+        </div>
+
+        <!-- Información -->
+        <section class="pd-info">
+            <h1>ANORAK CAB</h1>
+            <p class="pd-precio">$50.000</p>
+
+            <h2 class="pd-etiqueta">TALLES</h2>
+            <div class="pd-talles">
+                <button type="button">S</button>
+                <button type="button">M</button>
+                <button type="button">L</button>
+                <button type="button">XL</button>
+                <button type="button">XXL</button>
+            </div>
+
+            <h2 class="pd-etiqueta">CANTIDAD</h2>
+            <div class="pd-cantidad-fila">
+                <div class="pd-cantidad">
+                    <button type="button" id="menos">-</button>
+                    <input type="text" id="cantidad" value="1" readonly>
+                    <button type="button" id="mas">+</button>
+                </div>
+                <button type="button" class="pd-agregar">AGREGAR AL CARRITO</button>
+            </div>
+
+            <p class="pd-envio">El tiempo estimado de despacho es de entre 2 y 5 días hábiles luego de realizada
+                la&nbsp;compra.</p>
+        </section>
+
+    </main>
+
+    <!-- Pop-up de galería -->
+    <div class="pd-lightbox" id="lightbox" aria-hidden="true">
+        <button type="button" class="pd-lb-cerrar" id="lb-cerrar" aria-label="Cerrar">&times;</button>
+        <button type="button" class="pd-lb-flecha pd-lb-anterior" id="lb-anterior"
+            aria-label="Imagen anterior">&#8249;</button>
+        <figure class="pd-lb-contenido">
+            <img id="lb-img" src="" alt="Anorak CAB">
+        </figure>
+        <button type="button" class="pd-lb-flecha pd-lb-siguiente" id="lb-siguiente"
+            aria-label="Imagen siguiente">&#8250;</button>
+    </div>
+
+    <footer class="footer-index">
+
+        <div class="animation-footer">
+            <div class="items-animacion-footer">
+                <img src="imgs/footer/sponsors/mi-cabana-logo.svg" alt="Mi Cabaña Longchamps" class="sponsor-logo"
+                    width="143" height="43">
+                <img src="imgs/footer/sponsors/colorshop-logo.svg" alt="Colorshop" class="sponsor-logo" width="147"
+                    height="35">
+                <img src="imgs/footer/sponsors/fanaticos-logo.svg" alt="Fanáticos" class="sponsor-logo" width="138"
+                    height="60">
+                <img src="imgs/footer/sponsors/union-ganadera-logo.svg" alt="Unión Ganadera" class="sponsor-logo"
+                    width="100" height="69">
+                <img src="imgs/footer/sponsors/seven-sport-logo.svg" alt="Seven Sport" class="sponsor-logo" width="109"
+                    height="64">
+                <img src="imgs/footer/sponsors/pureza-de-las-sierras-logo.svg" alt="Pureza de las Sierras"
+                    class="sponsor-logo" width="83" height="81">
+                <img src="imgs/footer/sponsors/sportsbet-logo.svg" alt="Sportsbet.io" class="sponsor-logo" width="169"
+                    height="35">
+
+                <!-- Duplicado para el scroll infinito de los sponsors -->
+                <img src="imgs/footer/sponsors/mi-cabana-logo.svg" alt="Mi Cabaña Longchamps" class="sponsor-logo"
+                    width="143" height="43">
+                <img src="imgs/footer/sponsors/colorshop-logo.svg" alt="Colorshop" class="sponsor-logo" width="147"
+                    height="35">
+                <img src="imgs/footer/sponsors/fanaticos-logo.svg" alt="Fanáticos" class="sponsor-logo" width="138"
+                    height="60">
+                <img src="imgs/footer/sponsors/union-ganadera-logo.svg" alt="Unión Ganadera" class="sponsor-logo"
+                    width="100" height="69">
+                <img src="imgs/footer/sponsors/seven-sport-logo.svg" alt="Seven Sport" class="sponsor-logo" width="109"
+                    height="64">
+                <img src="imgs/footer/sponsors/pureza-de-las-sierras-logo.svg" alt="Pureza de las Sierras"
+                    class="sponsor-logo" width="83" height="81">
+                <img src="imgs/footer/sponsors/sportsbet-logo.svg" alt="Sportsbet.io" class="sponsor-logo" width="169"
+                    height="35">
+            </div>
+        </div>
+
+        <section class="info-footer">
+            <hr class="separador-footer">
+
+            <div class="contenido-footer">
+                <p class="copyright-footer">
+                    ClubAtleticoBrown.com | Sitio Web Oficial | Bartolomé Cerretti 868 - Adrogué<br>
+                    4214-6186 | info@clubatleticobrown.com
+                </p>
+
+                <div class="redes-sociales">
+
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="enlace-logo-instagram"
+                        aria-label="Instagram">
+                        <img src="imgs/footer/icon-rrss/icon-nav-instagram-off.svg" alt="" class="icono-default"
+                            width="38px" height="38px">
+                        <img src="imgs/footer/icon-rrss/icon-nav-instagram-on.svg" alt="" class="icono-hover"
+                            width="38px" height="38px">
+                    </a>
+
+                    <a href="https://facebook.com" target="_blank" rel="noopener" class="enlace-logo-facebook"
+                        aria-label="Facebook">
+                        <img src="imgs/footer/icon-rrss/icon-nav-facebook-off.svg" alt="" class="icono-default"
+                            width="38px" height="38px">
+                        <img src="imgs/footer/icon-rrss/icon-nav-facebook-on.svg" alt="" class="icono-hover"
+                            width="38px" height="38px">
+                    </a>
+
+                    <a href="https://x.com" target="_blank" rel="noopener" class="enlace-logo-x" aria-label="X">
+                        <img src="imgs/footer/icon-rrss/icon-nav-x-off.svg" alt="" class="icono-default" width="38px"
+                            height="38px">
+                        <img src="imgs/footer/icon-rrss/icon-nav-x-on.svg" alt="" class="icono-hover" width="38px"
+                            height="38px">
+                    </a>
+
+                    <a href="https://youtube.com" target="_blank" rel="noopener" class="enlace-logo-youtube"
+                        aria-label="YouTube">
+                        <img src="imgs/footer/icon-rrss/icon-nav-youtube-off.svg" alt="" class="icono-default"
+                            width="38px" height="38px">
+                        <img src="imgs/footer/icon-rrss/icon-nav-youtube-on.svg" alt="" class="icono-hover" width="38px"
+                            height="38px">
+                    </a>
+
+                    <a href="https://tiktok.com" target="_blank" rel="noopener" class="enlace-logo-tiktok"
+                        aria-label="TikTok">
+                        <img src="imgs/footer/icon-rrss/icon-nav-tiktok-off.svg" alt="" class="icono-default"
+                            width="38px" height="38px">
+                        <img src="imgs/footer/icon-rrss/icon-nav-tiktok-on.svg" alt="" class="icono-hover" width="38px"
+                            height="38px">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        // Galería: principal + miniaturas, en el mismo orden
+        const imagenes = [
+            'imgs/shop-anorak/anorak.png',
+            'imgs/shop-anorak/anorak-detalle-1.png',
+            'imgs/shop-anorak/anorak-detalle-2.png'
+        ];
+
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lb-img');
+        let indice = 0;
+
+        function abrirGaleria(i) {
+            indice = i;
+            lbImg.src = imagenes[indice];
+            lightbox.classList.add('abierto');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarGaleria() {
+            lightbox.classList.remove('abierto');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function moverGaleria(paso) {
+            indice = (indice + paso + imagenes.length) % imagenes.length;
+            lbImg.src = imagenes[indice];
+        }
+
+        // Imagen principal abre la galería en la primera imagen
+        document.getElementById('principal').addEventListener('click', () => abrirGaleria(0));
+
+        // Miniaturas abren la galería en su imagen
+        document.querySelectorAll('.pd-mini').forEach(mini => {
+            mini.addEventListener('click', () => abrirGaleria(Number(mini.dataset.index)));
+        });
+
+        // Controles del pop-up
+        document.getElementById('lb-cerrar').addEventListener('click', cerrarGaleria);
+        document.getElementById('lb-anterior').addEventListener('click', () => moverGaleria(-1));
+        document.getElementById('lb-siguiente').addEventListener('click', () => moverGaleria(1));
+
+        // Clic en el fondo oscuro cierra el pop-up (no al hacer clic en la imagen)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) cerrarGaleria();
+        });
+
+        // Teclado: Esc cierra, flechas navegan
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('abierto')) return;
+            if (e.key === 'Escape') cerrarGaleria();
+            if (e.key === 'ArrowLeft') moverGaleria(-1);
+            if (e.key === 'ArrowRight') moverGaleria(1);
+        });
+
+        // Selector de cantidad
+        const cantidad = document.getElementById('cantidad');
+        document.getElementById('mas').addEventListener('click', () => {
+            cantidad.value = parseInt(cantidad.value) + 1;
+        });
+        document.getElementById('menos').addEventListener('click', () => {
+            if (parseInt(cantidad.value) > 1) cantidad.value = parseInt(cantidad.value) - 1;
+        });
+    </script>
+
+</body>
+
+</html>
