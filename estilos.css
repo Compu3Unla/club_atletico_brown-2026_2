@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-/* ===== FUENTES ===== */
+/* =====================================================================
+   1. FUENTES
+   ===================================================================== */
 @font-face {
   font-family: 'Special-Gothic';
   src: url('fonts/SpecialGothicExpandedOne-Regular.ttf') format('truetype');
@@ -25,7 +27,27 @@
   font-display: swap;
 }
 
-/* ===== RESET ===== */
+/* =====================================================================
+   2. VARIABLES
+   ===================================================================== */
+:root {
+  --rojo: #b3141b;
+  --blanco: #ffffff;
+  --negro: #000000;
+
+  /* Medidas compartidas por TODAS las secciones */
+  --ancho-contenido: 1417px;  /* ancho del contenido de cada sección */
+  --alto-seccion: 750px;      /* alto de noticias, plantel y shop */
+  --espacio-seccion: 64px;    /* aire arriba/abajo en la página de plantel */
+  --gap-cards: 24px;          /* separación entre cards en galerías y grillas */
+
+  /* Punto medio de márgenes: tienda, producto, socios, noticias, historia y página de plantel */
+  --ancho-medio: 1128px;
+}
+
+/* =====================================================================
+   3. RESET Y BASE (todas las páginas)
+   ===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -33,23 +55,6 @@
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
 }
 
-/* ===== VARIABLES ===== */
-:root {
-  --rojo: #b3141b;
-  --blanco: #ffffff;
-  --negro: #000000;
-
-  /* Medidas compartidas por TODAS las secciones (noticias, plantel, shop y página de plantel) */
-  --ancho-contenido: 1417px;  /* ancho del contenido de cada sección */
-  --alto-seccion: 750px;      /* alto de noticias, plantel y shop */
-  --espacio-seccion: 64px;    /* aire arriba/abajo en la página de plantel */
-  --gap-cards: 24px;          /* separación entre cards en galerías y grillas */
-
-  /* Punto medio de márgenes: tienda, producto, socios y página de plantel */
-  --ancho-medio: 1128px;
-}
-
-/* ===== RESET BASE ===== */
 html,
 body {
   margin: 0;
@@ -59,19 +64,24 @@ body {
 }
 
 body {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 a {
-    text-decoration: none;
-    color: #FFFFFF;
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 img {
   border-radius: 1%;
 }
 
-/* ===== NAV ===== */
+/* =====================================================================
+   4. COMPARTIDO EN TODAS LAS PÁGINAS
+   (nav, botones de nav, botón volver, footer, chatbot flotante)
+   ===================================================================== */
+
+/* ----- Nav ----- */
 .cabecera {
   background-color: #12193D;
   padding: 15px 40px;
@@ -233,53 +243,7 @@ img {
   color: #AE2020;
 }
 
-/* ===== HERO (tienda) ===== */
-.hero {
-  width: 100%;
-  height: 60vh;
-  min-height: 300px;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
-
-/* ===== SECCIÓN SHOP (página tienda) ===== */
-.shop {
-  background-image: url('imgs/fondos/fondo-section-shop.png');
-  background-size: cover;
-  background-position: center;
-  background-color: var(--rojo);
-  padding: 60px 20px 80px;
-}
-
-.shop-container {
-  max-width: var(--ancho-medio);
-  margin: 0 auto;
-}
-
-.shop-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  padding-bottom: 12px;
-  margin-bottom: 40px;
-}
-
-.shop-header h2 {
-  color: var(--blanco);
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
-  font-family: 'Special-Gothic', sans-serif;
-  font-weight: 400;
-}
-
+/* ----- Botón "Volver" (tienda y socios) ----- */
 .btn-volver {
   background: var(--blanco);
   color: var(--negro);
@@ -295,599 +259,7 @@ img {
   opacity: 0.85;
 }
 
-.productos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.producto-card {
-  max-width: 345px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  color: var(--blanco);
-  font-family: 'Manrope', sans-serif;
-}
-
-.producto-card a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.producto-img {
-  background: var(--blanco);
-  aspect-ratio: 345 / 440;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  border-radius: 5px;
-}
-
-.producto-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.producto-card:hover .producto-img {
-  transform: translateY(-4px);
-}
-
-.producto-card h3 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  margin-bottom: 2px;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 4px;
-  transition: text-decoration-color 0.2s ease;
-}
-
-.producto-card:hover h3 {
-  text-decoration-color: var(--blanco);
-}
-
-.precio {
-  font-size: 0.75rem;
-  opacity: 0.95;
-}
-
-/* ===== PÁGINA DE PRODUCTO ===== */
-.pagina-producto {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Manrope', sans-serif;
-  color: var(--blanco);
-  background: var(--rojo) url('imgs/fondos/fondo-section-shop.png') center / cover no-repeat;
-}
-
-.pd-header {
-  padding: 80px 0 24px;
-}
-
-.pd-nav {
-  max-width: var(--ancho-medio);
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pd-menu {
-  list-style: none;
-  display: flex;
-  gap: 60px;
-  margin: 0;
-  padding: 0;
-}
-
-.pd-menu a {
-  color: var(--blanco);
-  text-decoration: none;
-  font-size: 0.7rem;
-  letter-spacing: 0.5px;
-}
-
-.pd-menu a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.pd-carrito {
-  width: 50px;
-  height: 50px;
-  background: var(--blanco);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pd-carrito img {
-  width: 28px;
-  height: auto;
-  display: block;
-}
-
-.pd-container {
-  max-width: var(--ancho-medio);
-  margin: 0 auto;
-  padding: 8px 20px 80px;
-  display: grid;
-  grid-template-columns: 216px 550px 1fr;
-  gap: 24px;
-  align-items: stretch;
-}
-
-.pd-miniaturas {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.pd-mini {
-  box-sizing: border-box;
-  width: 216px;
-  height: 264px;
-  padding: 0;
-  background: var(--blanco);
-  border: 2px solid transparent;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.pd-mini:hover {
-  border-color: var(--blanco);
-}
-
-.pd-mini img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.pd-principal {
-  width: 443px;
-  height: auto;
-  background: var(--blanco);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  cursor: zoom-in;
-}
-
-.pd-principal img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.pd-info h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin: 0 0 10px;
-  letter-spacing: 0.5px;
-}
-
-.pd-precio {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.pd-etiqueta {
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin: 28px 0 10px;
-}
-
-.pd-talles {
-  display: flex;
-  gap: 8px;
-}
-
-.pd-talles button {
-  width: 50px;
-  height: 50px;
-  background: var(--negro);
-  color: var(--blanco);
-  border: 0;
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.pd-talles button:hover {
-  background: #a8e6f0;
-  color: var(--negro);
-}
-
-.pd-cantidad-fila {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.pd-cantidad {
-  width: 130px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  background: var(--blanco);
-  color: var(--negro);
-}
-
-.pd-cantidad button {
-  width: 40px;
-  height: 100%;
-  background: none;
-  border: 0;
-  color: var(--negro);
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.pd-cantidad input {
-  flex: 1;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  text-align: center;
-  font-family: inherit;
-  font-size: 0.9rem;
-  color: var(--negro);
-}
-
-.pd-agregar {
-  height: 42px;
-  padding: 0 40px;
-  white-space: nowrap;
-  background: var(--negro);
-  color: var(--blanco);
-  border: 0;
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.pd-agregar:hover {
-  opacity: 0.85;
-}
-
-.pd-envio {
-  font-size: 0.65rem;
-  margin-top: 28px;
-  text-wrap: pretty;
-}
-
-.pd-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.pd-lightbox.abierto {
-  display: flex;
-}
-
-.pd-lb-contenido {
-  margin: 0;
-  padding: 16px;
-  background: var(--blanco);
-  box-sizing: border-box;
-  max-width: 90vw;
-  max-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pd-lb-contenido img {
-  display: block;
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-}
-
-.pd-lb-cerrar {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  background: none;
-  border: 0;
-  color: var(--blanco);
-  font-size: 2.5rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.pd-lb-flecha {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blanco);
-  color: var(--negro);
-  border: 0;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-.pd-lb-anterior {
-  left: 20px;
-}
-
-.pd-lb-siguiente {
-  right: 20px;
-}
-
-/* ===== PÁGINA DE SOCIOS ===== */
-.pagina-socios {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Manrope', sans-serif;
-  color: #000000;
-  background: #8ECDF2 url('imgs/fondos/fondo-section-plantel.png') center / cover no-repeat;
-}
-
-.socios-main {
-  max-width: var(--ancho-medio);
-  margin: 0 auto;
-  padding: 40px 20px 60px;
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 0 40px;
-  align-items: start;
-}
-
-.socios-header {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #000000;
-  padding-bottom: 10px;
-  margin-bottom: 16px;
-}
-
-.socios-header h2 {
-  font-family: 'Special-Gothic', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-.socios-intro {
-  grid-column: 1;
-  grid-row: 2;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
-
-.socios-columna {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.socios-banner {
-  grid-column: 2;
-  grid-row: 3;
-  position: relative;
-  overflow: hidden;
-  align-self: stretch;
-}
-
-.socios-banner img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
-
-.tabla-wrapper {
-  background: var(--blanco);
-  padding: 12px;
-}
-
-.tabla-precios {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 10px;
-}
-
-.tabla-precios th {
-  background: #8ECDF2;
-  color: #000000;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 18px 10px;
-  text-align: center;
-}
-
-.tabla-precios th:first-child {
-  background: none;
-}
-
-.tabla-precios td {
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 10px 0;
-}
-
-.tabla-precios .categoria {
-  display: block;
-  background: #AE2020;
-  color: var(--blanco);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 22px 10px;
-}
-
-.socios-cta {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 36px;
-}
-
-.btn-socio {
-  display: inline-block;
-  width: 273px;
-  padding: 14px 0;
-  background: #12193D;
-  color: var(--blanco);
-  text-decoration: none;
-  text-align: center;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-}
-
-.btn-socio:hover {
-  opacity: 0.85;
-}
-
-.titulo-seccion {
-  font-family: 'Special-Gothic', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  border-bottom: 1px solid #12193D;
-  padding-bottom: 8px;
-  margin: 30px 0 20px;
-}
-
-.beneficios {
-  list-style: none;
-}
-
-.beneficios li {
-  position: relative;
-  font-size: 0.8rem;
-  padding: 10px 0 10px 18px;
-}
-
-.beneficios li::before {
-  content: "•";
-  position: absolute;
-  left: 4px;
-}
-
-.preguntas-texto,
-.contacto {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.contacto strong {
-  font-weight: 700;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .productos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 800px) {
-  .pd-container {
-    grid-template-columns: 1fr;
-  }
-
-  .pd-miniaturas {
-    flex-direction: row;
-  }
-
-  .pd-mini {
-    width: 90px;
-    height: 110px;
-  }
-
-  .pd-principal {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 550 / 692;
-  }
-
-  .pd-menu {
-    gap: 24px;
-  }
-
-  .pd-lb-flecha {
-    width: 36px;
-    height: 36px;
-    font-size: 1.4rem;
-  }
-
-  .pd-lb-anterior {
-    left: 8px;
-  }
-
-  .pd-lb-siguiente {
-    right: 8px;
-  }
-
-  .socios-main {
-    grid-template-columns: 1fr;
-  }
-
-  .socios-header,
-  .socios-intro,
-  .socios-columna,
-  .socios-banner {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .socios-banner {
-    max-width: 300px;
-    margin: 0 auto;
-    min-height: 0;
-  }
-
-  .socios-banner img {
-    position: static;
-    height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .shop-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .shop-header h2 {
-    font-size: 1.1rem;
-  }
-}
-
-/* ===== FOOTER ===== */
+/* ----- Footer (todas las páginas) ----- */
 .footer-index {
   width: 100%;
   max-width: 1920px;
@@ -940,6 +312,7 @@ img {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -1017,108 +390,197 @@ img {
   opacity: 1;
 }
 
-/* ===== POPUP NEWSLETTER ===== */
-.nl-overlay {
+/* ----- Chatbot flotante ----- */
+.chat-bot-btn {
   position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: none;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 0;
 }
 
-.nl-overlay.abierto {
-  display: flex;
-}
-
-.nl-modal {
-  position: relative;
+.chat-bot-btn img {
   width: 100%;
-  max-width: 440px;
-  max-height: calc(100vh - 40px);
-  overflow-y: auto;
-  padding: 50px 40px 40px;
-  background: var(--blanco);
-  color: var(--negro);
-  text-align: center;
-  border-radius: 4px;
-}
-
-.nl-cerrar {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  background: none;
-  border: 0;
-  color: var(--negro);
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.nl-modal h2 {
-  font-family: 'Special-Gothic', sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.15;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-.nl-modal h2 span {
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
   display: block;
-  color: var(--rojo);
 }
 
-.nl-texto {
-  font-size: 0.85rem;
-  margin-bottom: 40px;
+.chat-bot-btn:hover {
+  transform: scale(1.08);
+  background-color: #AE2020;
 }
 
-.nl-form {
+.chatbot-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  font-family: Manrope, sans-serif;
+}
+
+.chatbot-checkbox {
+  display: none;
+}
+
+.chatbot-btn-flotante {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #12193D;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.chatbot-btn-flotante:hover {
+  transform: scale(1.08);
+}
+
+.chatbot-icon-btn {
+  width: 53px;
+  height: 71px;
+  object-fit: contain;
+}
+
+.chatbot-popup {
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  width: 380px;
+  height: 520px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
-.nl-form input {
-  width: 100%;
-  padding: 16px 18px;
-  border: 1px solid var(--negro);
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 0.95rem;
+/* lógica de apertura en CSS */
+.chatbot-checkbox:checked~.chatbot-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.nl-form input::placeholder {
-  color: #777777;
+.chatbot-header {
+  background-color: #AE2020;
+  color: #ffffff;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nl-enviar {
-  margin-top: 10px;
-  padding: 18px;
-  background: #12193D;
-  color: var(--blanco);
-  border: 0;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-  letter-spacing: 3px;
+.chatbot-title {
+  font-family: Special-Gothic, sans-serif;
+  font-size: 18pt;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.chatbot-close-btn {
+  font-size: 24pt;
   cursor: pointer;
+  line-height: 1;
+  font-weight: 300;
+  transition: opacity 0.2s ease;
 }
 
-.nl-enviar:hover {
-  opacity: 0.85;
+.chatbot-close-btn:hover {
+  opacity: 0.75;
 }
 
-.nl-aviso {
-  margin-top: 24px;
-  font-size: 0.85rem;
+.chatbot-body {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* ===== INDEX - HERO ===== */
+.chatbot-mensaje-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 85%;
+}
+
+.chatbot-msg-avatar {
+  width: 36px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.chatbot-burbuja {
+  background-color: #7CC0E8;
+  color: #000000;
+  padding: 12px 16px;
+  border-radius: 4px 16px 16px 16px;
+  font-size: 11pt;
+  line-height: 1.4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.chatbot-burbuja p {
+  margin: 0;
+}
+
+.chatbot-footer {
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+.chatbot-form {
+  display: flex;
+  width: 100%;
+}
+
+.chatbot-input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #cccccc;
+  border-radius: 23px;
+  padding: 0 20px;
+  font-family: Manrope, sans-serif;
+  font-size: 10.5pt;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.chatbot-input:focus {
+  border-color: #12193D;
+}
+
+/* =====================================================================
+   5. INDEX (index.html)
+   ===================================================================== */
+
+/* ----- Hero ----- */
 .hero-index {
   position: relative;
   width: 100%;
@@ -1242,38 +704,7 @@ img {
   }
 }
 
-.chat-bot-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  height: 70px;
-  background-color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  padding: 0;
-}
-
-.chat-bot-btn img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-
-.chat-bot-btn:hover {
-  transform: scale(1.08);
-  background-color: #AE2020;
-}
-
-/* ===== INDEX - NOTICIAS ===== */
+/* ----- Noticias (carrusel + columna derecha) ----- */
 .seccion-noticias {
   position: relative;
   width: 100%;
@@ -1546,12 +977,12 @@ img {
   display: block;
 }
 
-/* ===== INDEX / PÁGINA DE PLANTEL ===== */
-.seccion-plantel,
-.pagina-plantel {
+/* ----- Plantel (sección del index) ----- */
+.seccion-plantel {
   position: relative;
   width: 100%;
   max-width: 1920px;
+  height: var(--alto-seccion);
   margin: 0 auto;
   background-color: #7CC0E8;
   background-image: url('imgs/fondos/fondo-section-plantel.png');
@@ -1561,14 +992,10 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.seccion-plantel {
-  height: var(--alto-seccion);
   justify-content: center;
   padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .plantel-contenedor-general {
@@ -1593,33 +1020,33 @@ img {
 
 .titulo-plantel {
   font-family: Special-Gothic, sans-serif;
-  font-size: 32pt;
+  font-size: 1.8rem;
   color: #000000;
   margin: 0 0 4px 0;
   line-height: 1;
 }
 
 .subtitulo-plantel {
-  font-family: Manrope, sans-serif;
-  font-size: 16pt;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
   font-weight: 400;
+  line-height: 1.6;
   color: #000000;
   margin: 0;
-  opacity: 0.9;
 }
 
 .btn-plantel-completo {
-  font-family: Manrope, sans-serif;
-  font-size: 15pt;
-  font-weight: 500;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
   color: #ffffff;
   background-color: #000000;
   border: 2px solid #000000;
-  padding: 8px 20px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 2px;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .btn-plantel-completo:hover {
@@ -1767,7 +1194,7 @@ img {
   pointer-events: none;
 }
 
-/* ===== CARRUSELES (radios y transiciones) ===== */
+/* ----- Carruseles (radios y transiciones) de jugadores y productos ----- */
 .gal-radio {
   position: absolute;
   opacity: 0;
@@ -1854,7 +1281,7 @@ img {
   display: flex;
 }
 
-/* ===== INDEX - SHOP ===== */
+/* ----- Shop (sección del index) ----- */
 .bloque-shop {
   position: relative;
   width: 100%;
@@ -1908,33 +1335,33 @@ img {
 
 .titulo-shop {
   font-family: Special-Gothic, sans-serif;
-  font-size: 32pt;
+  font-size: 1.8rem;
   color: #ffffff;
   margin: 0 0 4px 0;
   line-height: 1;
 }
 
 .subtitulo-shop {
-  font-family: Manrope, sans-serif;
-  font-size: 16pt;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
   font-weight: 400;
+  line-height: 1.6;
   color: #ffffff;
   margin: 0;
-  opacity: 0.9;
 }
 
 .btn-shop-completo {
-  font-family: Manrope, sans-serif;
-  font-size: 15pt;
-  font-weight: 500;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
   color: #000000;
   background-color: #ffffff;
   border: 2px solid #ffffff;
-  padding: 8px 20px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 2px;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .btn-shop-completo:hover {
@@ -1952,7 +1379,7 @@ img {
   text-decoration: none;
 }
 
-/* --- galería: 4 visibles, avance de a 1 --- */
+/* galería: 4 visibles, avance de a 1 */
 .carrusel-wrapper-shop {
   width: 100%;
 }
@@ -2049,164 +1476,983 @@ img {
   display: block;
 }
 
-/* ===== CHATBOT ===== */
-.chatbot-container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 9999;
-  font-family: Manrope, sans-serif;
+/* =====================================================================
+   6. TIENDA (shop.html)
+   ===================================================================== */
+
+/* ----- Hero y sección de productos ----- */
+.hero {
+  width: 100%;
+  height: 60vh;
+  min-height: 300px;
+  overflow: hidden;
 }
 
-.chatbot-checkbox {
-  display: none;
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
-.chatbot-btn-flotante {
+.shop {
+  background-image: url('imgs/fondos/fondo-section-shop.png');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--rojo);
+  padding: 60px 20px 80px;
+}
+
+.shop-container {
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 12px;
+  margin-bottom: 40px;
+}
+
+.shop-header h2 {
+  color: var(--blanco);
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  font-family: 'Special-Gothic', sans-serif;
+  font-weight: 400;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.producto-card {
+  max-width: 345px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--blanco);
+  font-family: 'Manrope', sans-serif;
+}
+
+.producto-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.producto-img {
+  background: var(--blanco);
+  aspect-ratio: 345 / 440;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
-  background-color: #12193D;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  padding: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
-.chatbot-btn-flotante:hover {
-  transform: scale(1.08);
-}
-
-.chatbot-icon-btn {
-  width: 53px;
-  height: 71px;
+.producto-img img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
-.chatbot-popup {
+.producto-card:hover .producto-img {
+  transform: translateY(-4px);
+}
+
+.producto-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.producto-card:hover h3 {
+  text-decoration-color: var(--blanco);
+}
+
+.precio {
+  font-size: 0.75rem;
+  opacity: 0.95;
+}
+
+/* ----- Newsletter (popup) ----- */
+.nl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nl-overlay.abierto {
+  display: flex;
+}
+
+.nl-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 50px 40px 40px;
+  background: var(--blanco);
+  color: var(--negro);
+  text-align: center;
+  border-radius: 4px;
+}
+
+.nl-cerrar {
   position: absolute;
-  bottom: 85px;
-  right: 0;
-  width: 380px;
-  height: 520px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: 0;
+  color: var(--negro);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nl-modal h2 {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.nl-modal h2 span {
+  display: block;
+  color: var(--rojo);
+}
+
+.nl-texto {
+  font-size: 0.85rem;
+  margin-bottom: 40px;
+}
+
+.nl-form {
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  gap: 14px;
 }
 
-/* lógica de apertura en CSS */
-.chatbot-checkbox:checked~.chatbot-popup {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.nl-form input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--negro);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
 }
 
-.chatbot-header {
-  background-color: #AE2020;
-  color: #ffffff;
-  padding: 16px 20px;
+.nl-form input::placeholder {
+  color: #777777;
+}
+
+.nl-enviar {
+  margin-top: 10px;
+  padding: 18px;
+  background: #12193D;
+  color: var(--blanco);
+  border: 0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.nl-enviar:hover {
+  opacity: 0.85;
+}
+
+.nl-aviso {
+  margin-top: 24px;
+  font-size: 0.85rem;
+}
+
+/* ----- Responsive tienda ----- */
+@media (max-width: 900px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .shop-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* =====================================================================
+   7. PÁGINA DE PRODUCTO (shop-producto.html)
+   ===================================================================== */
+.pagina-producto {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: var(--blanco);
+  background: var(--rojo) url('imgs/fondos/fondo-section-shop.png') center / cover no-repeat;
+}
+
+.pd-header {
+  padding: 80px 0 24px;
+}
+
+.pd-nav {
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.chatbot-title {
-  font-family: Special-Gothic, sans-serif;
-  font-size: 18pt;
+.pd-menu {
+  list-style: none;
+  display: flex;
+  gap: 60px;
   margin: 0;
+  padding: 0;
+}
+
+.pd-menu a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.pd-menu a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Botón del carrito de la esquina: hover celeste */
+.pd-carrito {
+  width: 50px;
+  height: 50px;
+  background: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pd-carrito:hover {
+  background: #7CC0E8;
+  transform: translateY(-2px);
+}
+
+.pd-carrito img {
+  width: 28px;
+  height: auto;
+  display: block;
+}
+
+.pd-container {
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+  padding: 8px 20px 80px;
+  display: grid;
+  grid-template-columns: 216px 550px 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.pd-miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pd-mini {
+  box-sizing: border-box;
+  width: 216px;
+  height: 264px;
+  padding: 0;
+  background: var(--blanco);
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.pd-mini:hover {
+  border-color: var(--blanco);
+}
+
+.pd-mini img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pd-principal {
+  width: 443px;
+  height: auto;
+  background: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  cursor: zoom-in;
+}
+
+.pd-principal img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Título del producto: misma tipografía y tamaño que los títulos de sección */
+.pd-info h1 {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* Precio: mismo tamaño que el título */
+.pd-precio {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+}
+
+.pd-etiqueta {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 28px 0 10px;
+}
+
+.pd-talles {
+  display: flex;
+  gap: 8px;
+}
+
+.pd-talles button {
+  width: 50px;
+  height: 50px;
+  background: var(--negro);
+  color: var(--blanco);
+  border: 0;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pd-talles button:hover {
+  background: #a8e6f0;
+  color: var(--negro);
+}
+
+.pd-cantidad-fila {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.pd-cantidad {
+  width: 130px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  background: var(--blanco);
+  color: var(--negro);
+}
+
+.pd-cantidad button {
+  width: 40px;
+  height: 100%;
+  background: none;
+  border: 0;
+  color: var(--negro);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.pd-cantidad input {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--negro);
+}
+
+/* Botón "Agregar al carrito": hover celeste, como los talles */
+.pd-agregar {
+  height: 42px;
+  padding: 0 40px;
+  white-space: nowrap;
+  background: var(--negro);
+  color: var(--blanco);
+  border: 0;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pd-agregar:hover {
+  background: #a8e6f0;
+  color: var(--negro);
+}
+
+.pd-envio {
+  font-size: 0.65rem;
+  margin-top: 28px;
+  text-wrap: pretty;
+}
+
+/* ----- Lightbox de la galería ----- */
+.pd-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.pd-lightbox.abierto {
+  display: flex;
+}
+
+.pd-lb-contenido {
+  margin: 0;
+  padding: 16px;
+  background: var(--blanco);
+  box-sizing: border-box;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-lb-contenido img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.pd-lb-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: 0;
+  color: var(--blanco);
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pd-lb-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blanco);
+  color: var(--negro);
+  border: 0;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.pd-lb-anterior {
+  left: 20px;
+}
+
+.pd-lb-siguiente {
+  right: 20px;
+}
+
+/* ----- Responsive producto ----- */
+@media (max-width: 800px) {
+  .pd-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-miniaturas {
+    flex-direction: row;
+  }
+
+  .pd-mini {
+    width: 90px;
+    height: 110px;
+  }
+
+  .pd-principal {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 550 / 692;
+  }
+
+  .pd-menu {
+    gap: 24px;
+  }
+
+  .pd-lb-flecha {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+
+  .pd-lb-anterior {
+    left: 8px;
+  }
+
+  .pd-lb-siguiente {
+    right: 8px;
+  }
+}
+
+/* =====================================================================
+   8. SOCIOS (socios.html)
+   ===================================================================== */
+.pagina-socios {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: #000000;
+  background: #8ECDF2 url('imgs/fondos/fondo-section-plantel.png') center / cover no-repeat;
+}
+
+.socios-main {
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 0 40px;
+  align-items: start;
+}
+
+/* Encabezado de socios: ocupa todo el ancho, así la línea llega al margen y el botón queda a la derecha */
+.socios-header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+/* Texto de introducción de socios: mismo interlineado que el resto del cuerpo */
+.socios-intro {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.socios-columna {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.socios-banner {
+  grid-column: 2;
+  grid-row: 3;
+  position: relative;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+.socios-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Tabla de precios */
+.tabla-wrapper {
+  background: var(--blanco);
+  padding: 12px;
+}
+
+.tabla-precios {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.tabla-precios th {
+  background: #8ECDF2;
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 18px 10px;
+  text-align: center;
+}
+
+.tabla-precios th:first-child {
+  background: none;
+}
+
+.tabla-precios td {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.tabla-precios .categoria {
+  display: block;
+  background: #AE2020;
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 22px 10px;
+}
+
+.socios-cta {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 36px;
+}
+
+.btn-socio {
+  display: inline-block;
+  width: 273px;
+  padding: 14px 0;
+  background: #12193D;
+  color: var(--blanco);
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.8rem;
   letter-spacing: 1px;
 }
 
-.chatbot-close-btn {
-  font-size: 24pt;
-  cursor: pointer;
-  line-height: 1;
-  font-weight: 300;
-  transition: opacity 0.2s ease;
+.btn-socio:hover {
+  opacity: 0.85;
 }
 
-.chatbot-close-btn:hover {
-  opacity: 0.75;
+.titulo-seccion {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-bottom: 1px solid #12193D;
+  padding-bottom: 8px;
+  margin: 30px 0 20px;
 }
 
-.chatbot-body {
-  flex: 1;
+.beneficios {
+  list-style: none;
+}
+
+.beneficios li {
+  position: relative;
+  font-size: 0.8rem;
+  padding: 10px 0 10px 18px;
+}
+
+.beneficios li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+}
+
+.preguntas-texto,
+.contacto {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.contacto strong {
+  font-weight: 700;
+}
+
+/* ----- Popup "Hacete socio" (formulario de 3 pasos, sin JavaScript) ----- */
+
+/* Oculto por defecto; se muestra cuando el link apunta a #popup-socios */
+.sp-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background: rgba(0, 0, 0, 0.6);
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
-.chatbot-mensaje-container {
+.sp-overlay:target {
   display: flex;
+}
+
+.sp-cerrar {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sp-caja {
+  width: 100%;
+  max-width: 560px;
+  background: #AE2020;
+  color: #ffffff;
+  padding: 32px 36px 36px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.sp-cabecera {
+  display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
-  max-width: 85%;
+  margin-bottom: 22px;
 }
 
-.chatbot-msg-avatar {
-  width: 36px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
+.sp-titulo {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0 0 10px;
 }
 
-.chatbot-burbuja {
-  background-color: #7CC0E8;
-  color: #000000;
-  padding: 12px 16px;
-  border-radius: 4px 16px 16px 16px;
-  font-size: 11pt;
+.sp-bajada {
+  font-size: 0.7rem;
   line-height: 1.4;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.chatbot-burbuja p {
+  max-width: 300px;
   margin: 0;
 }
 
-.chatbot-footer {
-  padding: 15px 20px;
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
+.sp-logo {
+  width: 60px;
+  height: auto;
 }
 
-.chatbot-form {
+/* Radios ocultos: solo sirven para guardar el paso actual */
+.sp-radio {
+  display: none;
+}
+
+.sp-panel {
   display: flex;
-  width: 100%;
-}
-
-.chatbot-input {
-  width: 100%;
-  height: 46px;
-  border: 1px solid #cccccc;
-  border-radius: 23px;
-  padding: 0 20px;
-  font-family: Manrope, sans-serif;
-  font-size: 10.5pt;
-  outline: none;
+  gap: 30px;
+  background: #8ECDF2;
+  color: #000000;
+  padding: 30px 28px;
   box-sizing: border-box;
-  transition: border-color 0.2s ease;
 }
 
-.chatbot-input:focus {
-  border-color: #12193D;
+/* Indicador de pasos */
+.sp-pasos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-/* ===== PÁGINA DE PLANTEL (futbol-plantel.html) ===== */
+.sp-circulo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4A4A4A;
+  color: #ffffff;
+  font-family: 'Special-Gothic', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.sp-circulo:last-child {
+  margin-bottom: 0;
+}
+
+/* Círculo en rojo: el paso actual y los ya completados */
+#paso-1:checked~.sp-panel .circ-1,
+#paso-2:checked~.sp-panel .circ-1,
+#paso-2:checked~.sp-panel .circ-2,
+#paso-3:checked~.sp-panel .circ-1,
+#paso-3:checked~.sp-panel .circ-2,
+#paso-3:checked~.sp-panel .circ-3 {
+  background: #AE2020;
+}
+
+/* Contenido de cada paso */
+.sp-contenido {
+  flex: 1;
+  min-width: 0;
+}
+
+.sp-seccion {
+  display: none;
+  flex-direction: column;
+}
+
+/* Muestra solo la sección del paso marcado */
+#paso-1:checked~.sp-panel .seccion-1,
+#paso-2:checked~.sp-panel .seccion-2,
+#paso-3:checked~.sp-panel .seccion-3 {
+  display: flex;
+}
+
+.sp-seccion h3 {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+.sp-seccion input,
+.sp-seccion select {
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  box-sizing: border-box;
+}
+
+.sp-seccion input:focus,
+.sp-seccion select:focus {
+  outline: 2px solid #12193D;
+  outline-offset: 1px;
+}
+
+/* Botones "Siguiente" y "Finalizar" */
+.sp-btn {
+  align-self: center;
+  margin-top: 14px;
+  padding: 10px 36px;
+  background: #12193D;
+  color: #ffffff;
+  border: 0;
+  border-radius: 2px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.sp-btn:hover {
+  opacity: 0.85;
+}
+
+/* ----- Responsive socios ----- */
+@media (max-width: 800px) {
+  .socios-main {
+    grid-template-columns: 1fr;
+  }
+
+  .socios-header,
+  .socios-intro,
+  .socios-columna,
+  .socios-banner {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .socios-banner {
+    max-width: 300px;
+    margin: 0 auto;
+    min-height: 0;
+  }
+
+  .socios-banner img {
+    position: static;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-caja {
+    padding: 24px 18px 28px;
+  }
+
+  .sp-panel {
+    gap: 18px;
+    padding: 22px 14px;
+  }
+
+  .sp-circulo {
+    margin-bottom: 40px;
+  }
+}
+
+/* =====================================================================
+   9. PLANTEL (futbol-plantel.html)
+   ===================================================================== */
 .pagina-plantel {
-  padding: var(--espacio-seccion) 20px;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #7CC0E8;
+  background-image: url('imgs/fondos/fondo-section-plantel.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px 60px;
+  box-sizing: border-box;
 }
 
 .pagina-plantel .contenido-plantel,
@@ -2215,6 +2461,7 @@ img {
   z-index: 2;
   width: 100%;
   max-width: var(--ancho-medio);
+  margin: 0 auto;
 }
 
 .contenido-plantel {
@@ -2222,53 +2469,44 @@ img {
   flex-direction: column;
 }
 
+/* Encabezado de plantel: título a la izquierda, botón a la derecha, con línea debajo */
 .encabezado-plantel {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
-  margin-bottom: 35px;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 .pagina-plantel .titulo-plantel {
   font-family: 'Special-Gothic', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  letter-spacing: 0.5px;
   color: #000000;
   margin: 0;
   line-height: 1;
 }
 
 .btn-volver-inicio {
-  font-family: Manrope, sans-serif;
-  font-size: 15pt;
-  font-weight: 500;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
   color: #ffffff;
   background-color: #000000;
   border: 2px solid #000000;
-  padding: 8px 20px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 2px;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .btn-volver-inicio:hover {
   background-color: transparent;
   color: #000000;
   border-color: #000000;
-}
-
-/* grilla de jugadores: 4 columnas, mismas cards que el index */
-.pagina-plantel .lista-jugadores {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-cards);
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 .fila-jugadores-1,
@@ -2279,8 +2517,17 @@ img {
   grid-template-columns: repeat(4, 1fr);
   gap: var(--gap-cards);
   width: 100%;
+  margin-bottom: var(--gap-cards);
 }
 
+.pagina-plantel .lista-jugadores {
+  display: contents;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cuerpo técnico: título, línea separadora y cards */
 .pagina-plantel .cuerpo-tecnico {
   margin-top: 50px;
 }
@@ -2297,231 +2544,347 @@ img {
 
 .titulo-seccion-ct {
   font-family: 'Special-Gothic', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  letter-spacing: 0.5px;
   color: #000000;
   margin: 0;
+  line-height: 1;
 }
 
+/* Línea bajo el título del cuerpo técnico, visible como en el prototipo */
 .separador-cuerpo-tecnico {
+  display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
+  border: 0;
   background-color: #000000;
-  opacity: 0.2;
-  margin-bottom: 25px;
+  opacity: 0.35;
+  margin: 12px 0 25px 0;
 }
 
-/* ===== MAIN-NOTICIA ===== */
-.body-noticias {
-    background-color: #FFFFFF;
-    max-width: 1440px;
-    margin: 40px auto 80px auto;
-}
+/* =====================================================================
+   10. NOTICIAS, HISTORIA Y SILVA (páginas de texto compartidas)
+   ===================================================================== */
 
+/* Contenedor general, igual que socios */
+.body-noticias,
 .contenido-principal {
-    max-width: 1440px;
-    margin: 40px auto 80px auto;
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  background-color: #FFFFFF;
 }
 
+/* Encabezado: título a la izquierda, botón a la derecha, siempre en una sola línea */
 .encabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.boton-volver {
-    font-size: 16px;
-    font-weight: 700;
-    color: #000000;
-    border: 2px solid #000000;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-.boton-volver:hover {
-    background-color: #000000;
-    color: #FFFFFF;
-}
-
-.separador {
-    border: none;
-    border-top: 1px solid #000000;
-    margin: 16px 0 48px 0;;
-}
-
-.contenido-noticias {    
-    display: grid;
-    grid-template-columns: 1fr 219px;
-    gap: 20px;
-}
-
-.columna-izquierda {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.noticias-destacadas {
-    display: grid;
-    grid-template-columns: 0.8fr 0.9fr;
-    gap: 58px;
-}
-
-.imagen-tarjeta {
-    position: relative;
-}
-
-.etiqueta-titulo {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 16px;
-}
-
-.bajada {
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    color: #000000;
-    line-height: 1.5;
-    margin-top: 12px;
-}
-
-.noticias-secundarias {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
-
-.tarjeta-secundaria img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-}
-
-.titulo-secundario {
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: #C61D1D;
-    margin-top: 10px;
-}
-
-/* ===== MAIN-HISTORIA ===== */
-.contenido-principal {
-    max-width: 1440px;
-    margin: 40px auto 80px auto;
-}
-
-.encabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .titulo-pagina {
-    font-family: Special-Gothic, sans-serif;
-    font-size: 32pt;
-    color: rgb(0, 0, 0);
-    line-height: 1;
-    margin: 0px 0px 4px;
+  font-family: Special-Gothic, sans-serif;
+  font-size: 1.8rem;
+  color: #000000;
+  line-height: 1;
+  margin: 0 0 4px;
+  min-width: 0;
 }
 
 .boton-volver {
-    font-size: 16px;
-    font-weight: 700;
-    color: #000000;
-    border: 2px solid #000000;
-    padding: 8px 16px;
-    border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 .boton-volver:hover {
-    background-color: #000000;
-    color: #FFFFFF;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* El botón no se encoge ni baja de línea */
+.encabezado .boton-volver {
+  flex-shrink: 0;
+  margin-left: 24px;
+  white-space: nowrap;
 }
 
 .separador {
-    border: none;
-    border-top: 1px solid #000000;
-    margin: 16px 0 48px 0;;
+  border: none;
+  border-top: 1px solid #000000;
+  margin: 16px 0 48px 0;
 }
 
+/* Texto de cuerpo: mismo estilo que los textos de socios.html */
+.bajada,
+.columna-texto p,
+.parrafo-final,
+.parrafo-noticia,
+.pie-imagen-noticia,
+.columna-imagen figcaption {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+/* Imágenes sin esquinas redondeadas */
+.imagen-tarjeta img,
+.tarjeta-secundaria img,
+.columna-imagen img,
+.imagen-hero-noticia,
+.imagen-noticia,
+.banner-socios {
+  border-radius: 0;
+}
+
+/* =====================================================================
+   11. NOTICIAS (noticias.html)
+   ===================================================================== */
+
+/* Título: más chico, como en el prototipo */
+.body-noticias .titulo-pagina {
+  font-size: 1.8rem;
+}
+
+/* Botón "Volver": negro y chico, como los de tienda y socios */
+.body-noticias .boton-volver {
+  background: #000000;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  padding: 6px 14px;
+}
+
+.body-noticias .boton-volver:hover {
+  background: #000000;
+  color: #FFFFFF;
+  opacity: 0.85;
+}
+
+/* Grilla: columna del banner más angosta y todo alineado arriba */
+.contenido-noticias {
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.columna-izquierda {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Tarjetas grandes */
+.noticias-destacadas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.imagen-tarjeta {
+  position: relative;
+}
+
+.imagen-tarjeta img {
+  width: 100%;
+  aspect-ratio: 9 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+/* Etiqueta del título: azul claro sobre negro, en dos líneas, como el prototipo */
+.etiqueta-titulo {
+  position: absolute;
+  left: 35px;
+  right: 30px;
+  bottom: 35px;
+  margin: 0;
+  padding: 16px 20px;
+  background-color: #000000;
+  color: #8ECDF2;
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.bajada {
+  margin-top: 12px;
+}
+
+/* Tarjetas chicas: 4 en fila, texto centrado */
+.noticias-secundarias {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.tarjeta-secundaria img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.titulo-secundario {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #C61D1D;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Banner: ocupa toda la altura de la columna, como en el prototipo */
+.columna-derecha {
+  min-width: 0;
+}
+
+.enlace-banner {
+  display: block;
+  height: 100%;
+}
+
+.banner-socios {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+
+.enlace-tarjeta {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+
+.enlace-tarjeta:hover .imagen-tarjeta img {
+  opacity: 0.9;
+}
+/* =====================================================================
+   12. HISTORIA (club-historia.html)
+   ===================================================================== */
+
+/* Título: mismo tamaño que en noticias */
+.contenido-principal .titulo-pagina {
+  font-size: 1.8rem;
+}
+
+/* Botón "Volver": negro y chico, igual que en noticias */
+.contenido-principal .boton-volver {
+  background: #000000;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  padding: 6px 14px;
+}
+
+.contenido-principal .boton-volver:hover {
+  background: #000000;
+  color: #FFFFFF;
+  opacity: 0.85;
+}
+
+/* Menú de secciones: centrado, texto chico, sin subrayado fijo */
 .lista-secciones {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-bottom: 48px;
-    gap: 70px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 48px 0;
+  gap: 48px;
 }
 
 .enlace-seccion {
-    font-size: 16px;
-    font-weight: 700;
-    color: #C61D1D;
-    padding-bottom: 4px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C61D1D;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
 }
 
 .enlace-seccion:hover,
 .enlace-seccion.activo {
-    border-bottom: 3px solid #C61D1D;
+  border-bottom: 3px solid #C61D1D;
 }
 
+/* Dos columnas: texto y foto */
 .dos-columnas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
+/* Texto de cuerpo: mismo tamaño que noticias y socios */
 .columna-texto p {
-    font-size: 20PX;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+/* Columna de la foto */
+.columna-imagen {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .columna-imagen img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.columna-imagen {
-    display: flex;
-    flex-direction: column;
-    gap: 77px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
 }
 
 .columna-imagen figcaption {
-    font-size: 16px;
-    color: #000000;
-    margin-top: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  color: #000000;
+  margin-top: 8px;
 }
 
 .parrafo-final {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-top: 24px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0;
 }
 
-/* MAIN-NOTICIAS-SILVA */
+/* =====================================================================
+   13. NOTICIA TANQUE SILVA (noticia-tanque-silva.html)
+   ===================================================================== */
 .noticia-tanque-silva {
   background-color: #FFFFFF;
   padding-bottom: 80px;
 }
 
-
-/* ---------- Foto con titular ---------- */
+/* Foto con titular */
 .hero-noticia {
   position: relative;
-  background-color: #12193D; 
+  background-color: #12193D;
 }
 
 .imagen-hero-noticia {
@@ -2531,29 +2894,29 @@ img {
   display: block;
 }
 
+
 .titulo-hero-noticia {
   position: absolute;
-  left: 60px;
+  left: 50%;
   bottom: 40px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90%;
+  margin: 0;
   color: #12193D;
   font-family: Special-Gothic, sans-serif;
   font-size: 58pt;
   line-height: 1.1;
   letter-spacing: 2px;
-  margin-bottom: 12px;
+  text-align: center;
 }
 
-
-/* ---------- Contenedor centrado ---------- */
-
-/* margin: auto lo centra en la pantalla */
+/* Contenedor centrado (barra de crédito y compartir) */
 .contenedor-noticia {
-  max-width: 1440px;
-  margin: 40px auto 80px auto;
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+  padding: 0 20px;
 }
-
-
-/* ---------- Barra: crédito y compartir ---------- */
 
 .barra-noticia {
   display: flex;
@@ -2565,7 +2928,7 @@ img {
 
 .credito-noticia {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 0.8rem;
   color: #000000;
 }
 
@@ -2577,7 +2940,7 @@ img {
 
 .label-compartir {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 0.8rem;
   color: #000000;
 }
 
@@ -2623,23 +2986,18 @@ img {
   opacity: 1;
 }
 
-
-/* ---------- Artículo: dos columnas ---------- */
+/* Artículo: dos columnas, centrado a 1128px */
 .articulo-noticia {
   display: flex;
   align-items: stretch;
   gap: 50px;
+  max-width: var(--ancho-medio);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .texto-noticia {
   flex: 0.9;
-}
-
-.parrafo-noticia {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #000000;
-  margin-bottom: 24px;
 }
 
 .figura-noticia {
@@ -2653,11 +3011,21 @@ img {
   min-height: 300px;
   object-fit: cover;
   display: block;
-  border-radius: 1%;
 }
 
-.pie-imagen-noticia {
-  margin-top: 12px;
-  font-size: 16px;
-  color: #000000;
+/* =====================================================================
+   14. TÍTULOS DE SECCIÓN (unificados en todas las páginas)
+   ===================================================================== */
+.titulo-pagina,
+.titulo-plantel,
+.titulo-shop,
+.titulo-seccion-ct,
+.pagina-plantel .titulo-plantel,
+.socios-header h2 {
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
 }
