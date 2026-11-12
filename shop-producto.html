@@ -92,7 +92,6 @@
 
     <main class="pd-container">
 
-        <!-- Miniaturas -->
         <div class="pd-miniaturas">
             <button type="button" class="pd-mini" data-index="1">
                 <img src="imgs/shop-anorak/anorak-detalle-1.png" alt="Anorak detalle 1">
@@ -102,12 +101,10 @@
             </button>
         </div>
 
-        <!-- Imagen principal -->
         <div class="pd-principal" id="principal">
             <img src="imgs/shop-anorak/anorak.png" alt="Anorak CAB">
         </div>
 
-        <!-- Información -->
         <section class="pd-info">
             <h1>ANORAK CAB</h1>
             <p class="pd-precio">$50.000</p>
@@ -137,7 +134,6 @@
 
     </main>
 
-    <!-- Pop-up de galería -->
     <div class="pd-lightbox" id="lightbox" aria-hidden="true">
         <button type="button" class="pd-lb-cerrar" id="lb-cerrar" aria-label="Cerrar">&times;</button>
         <button type="button" class="pd-lb-flecha pd-lb-anterior" id="lb-anterior"
@@ -168,7 +164,6 @@
                 <img src="imgs/footer/sponsors/sportsbet-logo.svg" alt="Sportsbet.io" class="sponsor-logo" width="169"
                     height="35">
 
-                <!-- Duplicado para el scroll infinito de los sponsors -->
                 <img src="imgs/footer/sponsors/mi-cabana-logo.svg" alt="Mi Cabaña Longchamps" class="sponsor-logo"
                     width="143" height="43">
                 <img src="imgs/footer/sponsors/colorshop-logo.svg" alt="Colorshop" class="sponsor-logo" width="147"
@@ -237,7 +232,6 @@
     </footer>
 
     <script>
-        // Galería: principal + miniaturas, en el mismo orden
         const imagenes = [
             'imgs/shop-anorak/anorak.png',
             'imgs/shop-anorak/anorak-detalle-1.png',
@@ -267,25 +261,20 @@
             lbImg.src = imagenes[indice];
         }
 
-        // Imagen principal abre la galería en la primera imagen
         document.getElementById('principal').addEventListener('click', () => abrirGaleria(0));
 
-        // Miniaturas abren la galería en su imagen
         document.querySelectorAll('.pd-mini').forEach(mini => {
             mini.addEventListener('click', () => abrirGaleria(Number(mini.dataset.index)));
         });
 
-        // Controles del pop-up
         document.getElementById('lb-cerrar').addEventListener('click', cerrarGaleria);
         document.getElementById('lb-anterior').addEventListener('click', () => moverGaleria(-1));
         document.getElementById('lb-siguiente').addEventListener('click', () => moverGaleria(1));
 
-        // Clic en el fondo oscuro cierra el pop-up (no al hacer clic en la imagen)
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) cerrarGaleria();
         });
 
-        // Teclado: Esc cierra, flechas navegan
         document.addEventListener('keydown', (e) => {
             if (!lightbox.classList.contains('abierto')) return;
             if (e.key === 'Escape') cerrarGaleria();
@@ -293,7 +282,6 @@
             if (e.key === 'ArrowRight') moverGaleria(1);
         });
 
-        // Selector de cantidad
         const cantidad = document.getElementById('cantidad');
         document.getElementById('mas').addEventListener('click', () => {
             cantidad.value = parseInt(cantidad.value) + 1;

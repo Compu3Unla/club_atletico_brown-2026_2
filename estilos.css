@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-/* =====================================================================
-   1. FUENTES
-   ===================================================================== */
 @font-face {
   font-family: 'Special-Gothic';
   src: url('fonts/SpecialGothicExpandedOne-Regular.ttf') format('truetype');
@@ -27,27 +24,17 @@
   font-display: swap;
 }
 
-/* =====================================================================
-   2. VARIABLES
-   ===================================================================== */
 :root {
   --rojo: #b3141b;
   --blanco: #ffffff;
   --negro: #000000;
-
-  /* Medidas compartidas por TODAS las secciones */
-  --ancho-contenido: 1417px;  /* ancho del contenido de cada sección */
-  --alto-seccion: 750px;      /* alto de noticias, plantel y shop */
-  --espacio-seccion: 64px;    /* aire arriba/abajo en la página de plantel */
-  --gap-cards: 24px;          /* separación entre cards en galerías y grillas */
-
-  /* Punto medio de márgenes: tienda, producto, socios, noticias, historia y página de plantel */
+  --ancho-contenido: 1417px;
+  --alto-seccion: 750px;
+  --espacio-seccion: 64px;
+  --gap-cards: 24px;
   --ancho-medio: 1128px;
 }
 
-/* =====================================================================
-   3. RESET Y BASE (todas las páginas)
-   ===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -76,12 +63,8 @@ img {
   border-radius: 1%;
 }
 
-/* =====================================================================
-   4. COMPARTIDO EN TODAS LAS PÁGINAS
-   (nav, botones de nav, botón volver, footer, chatbot flotante)
-   ===================================================================== */
 
-/* ----- Nav ----- */
+/* ----- NAV ----- */
 .cabecera {
   background-color: #12193D;
   padding: 15px 40px;
@@ -259,7 +242,7 @@ img {
   opacity: 0.85;
 }
 
-/* ----- Footer (todas las páginas) ----- */
+/* ----- FOOTER ----- */
 .footer-index {
   width: 100%;
   max-width: 1920px;
@@ -297,7 +280,7 @@ img {
   flex-shrink: 0;
 }
 
-/* El tamaño de cada logo lo definen los atributos width/height del HTML */
+/* LOGOS */
 .sponsor-logo {
   object-fit: contain;
   opacity: 0.95;
@@ -390,7 +373,7 @@ img {
   opacity: 1;
 }
 
-/* ----- Chatbot flotante ----- */
+/* ----- CHAT-BOT ----- */
 .chat-bot-btn {
   position: fixed;
   bottom: 30px;
@@ -577,7 +560,7 @@ img {
 }
 
 /* =====================================================================
-   5. INDEX (index.html)
+    INDEX (index.html)
    ===================================================================== */
 
 /* ----- Hero ----- */
@@ -622,7 +605,7 @@ img {
   align-items: center;
   text-align: center;
   padding: 0 20px;
-  margin-top: -40px; /* Pequeño ajuste para centrado óptico */
+  margin-top: -40px;
 }
 
 .hero-titulo {
@@ -704,7 +687,7 @@ img {
   }
 }
 
-/* ----- Noticias (carrusel + columna derecha) ----- */
+/* ----- NOTICIAS ----- */
 .seccion-noticias {
   position: relative;
   width: 100%;
@@ -977,7 +960,7 @@ img {
   display: block;
 }
 
-/* ----- Plantel (sección del index) ----- */
+/* ----- PLANTEL ----- */
 .seccion-plantel {
   position: relative;
   width: 100%;
@@ -1075,10 +1058,9 @@ img {
   padding: 0;
   margin: 0;
   list-style: none;
-  overflow: hidden; /* solo se ven 4 cards; el resto queda recortado */
+  overflow: hidden;
 }
 
-/* 4 cards visibles: cada una ocupa un cuarto del ancho menos los 3 espacios */
 .carousel-wrapper-plantel-de-jugadores .card-jugador {
   flex: 0 0 calc((100% - 3 * var(--gap-cards)) / 4);
 }
@@ -1194,7 +1176,7 @@ img {
   pointer-events: none;
 }
 
-/* ----- Carruseles (radios y transiciones) de jugadores y productos ----- */
+/* ----- PLANTEL ----- */
 .gal-radio {
   position: absolute;
   opacity: 0;
@@ -1281,7 +1263,7 @@ img {
   display: flex;
 }
 
-/* ----- Shop (sección del index) ----- */
+/* ----- SHOP ----- */
 .bloque-shop {
   position: relative;
   width: 100%;
@@ -1379,7 +1361,6 @@ img {
   text-decoration: none;
 }
 
-/* galería: 4 visibles, avance de a 1 */
 .carrusel-wrapper-shop {
   width: 100%;
 }
@@ -1400,7 +1381,7 @@ img {
   padding: 0;
   margin: 0;
   list-style: none;
-  overflow: hidden; /* solo se ven 4 cards; el resto queda recortado */
+  overflow: hidden; 
 }
 
 .card-producto {
@@ -1477,10 +1458,10 @@ img {
 }
 
 /* =====================================================================
-   6. TIENDA (shop.html)
+   SHOP (shop.html)
    ===================================================================== */
 
-/* ----- Hero y sección de productos ----- */
+/* ----- HERO ----- */
 .hero {
   width: 100%;
   height: 60vh;
@@ -1589,7 +1570,7 @@ img {
   opacity: 0.95;
 }
 
-/* ----- Newsletter (popup) ----- */
+/* ----- POPUP ----- */
 .nl-overlay {
   position: fixed;
   inset: 0;
@@ -1690,28 +1671,10 @@ img {
   font-size: 0.85rem;
 }
 
-/* ----- Responsive tienda ----- */
-@media (max-width: 900px) {
-  .productos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .shop-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .shop-header h2 {
-    font-size: 1.1rem;
-  }
-}
-
 /* =====================================================================
-   7. PÁGINA DE PRODUCTO (shop-producto.html)
+   SHOP-PRODUCTO (shop-producto.html)
    ===================================================================== */
+
 .pagina-producto {
   margin: 0;
   min-height: 100vh;
@@ -2012,48 +1975,8 @@ img {
   right: 20px;
 }
 
-/* ----- Responsive producto ----- */
-@media (max-width: 800px) {
-  .pd-container {
-    grid-template-columns: 1fr;
-  }
-
-  .pd-miniaturas {
-    flex-direction: row;
-  }
-
-  .pd-mini {
-    width: 90px;
-    height: 110px;
-  }
-
-  .pd-principal {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 550 / 692;
-  }
-
-  .pd-menu {
-    gap: 24px;
-  }
-
-  .pd-lb-flecha {
-    width: 36px;
-    height: 36px;
-    font-size: 1.4rem;
-  }
-
-  .pd-lb-anterior {
-    left: 8px;
-  }
-
-  .pd-lb-siguiente {
-    right: 8px;
-  }
-}
-
 /* =====================================================================
-   8. SOCIOS (socios.html)
+   SOCIOS (socios.html)
    ===================================================================== */
 .pagina-socios {
   margin: 0;
@@ -2217,7 +2140,7 @@ img {
   font-weight: 700;
 }
 
-/* ----- Popup "Hacete socio" (formulario de 3 pasos, sin JavaScript) ----- */
+/* ----- POPUP- hacete socio ----- */
 
 /* Oculto por defecto; se muestra cuando el link apunta a #popup-socios */
 .sp-overlay {
@@ -2396,47 +2319,6 @@ img {
 
 .sp-btn:hover {
   opacity: 0.85;
-}
-
-/* ----- Responsive socios ----- */
-@media (max-width: 800px) {
-  .socios-main {
-    grid-template-columns: 1fr;
-  }
-
-  .socios-header,
-  .socios-intro,
-  .socios-columna,
-  .socios-banner {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .socios-banner {
-    max-width: 300px;
-    margin: 0 auto;
-    min-height: 0;
-  }
-
-  .socios-banner img {
-    position: static;
-    height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .sp-caja {
-    padding: 24px 18px 28px;
-  }
-
-  .sp-panel {
-    gap: 18px;
-    padding: 22px 14px;
-  }
-
-  .sp-circulo {
-    margin-bottom: 40px;
-  }
 }
 
 /* =====================================================================
@@ -2873,9 +2755,7 @@ img {
   margin: 0;
 }
 
-/* =====================================================================
-   13. NOTICIA TANQUE SILVA (noticia-tanque-silva.html)
-   ===================================================================== */
+/* Acá arranca la noticia del Tanque Silva */
 .noticia-tanque-silva {
   background-color: #FFFFFF;
   padding-bottom: 80px;
@@ -2884,28 +2764,44 @@ img {
 /* Foto con titular */
 .hero-noticia {
   position: relative;
+  width: 100%;
+  height: 550px;
   background-color: #12193D;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .imagen-hero-noticia {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center;
+  z-index: 1;
 }
 
+.hero-noticia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(18, 25, 61, 0) 40%, rgba(18, 25, 61, 0.85) 80%, #12193D 100%);
+  z-index: 2;
+  pointer-events: none;
+}
 
 .titulo-hero-noticia {
-  position: absolute;
-  left: 50%;
-  bottom: 40px;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: 90%;
-  margin: 0;
-  color: #12193D;
-  font-family: Special-Gothic, sans-serif;
-  font-size: 58pt;
+  position: relative;
+  z-index: 3;
+  margin: 0 0 40px 0;
+  width: 100%;
+  padding: 0 20px;
+  color: #ffffff; /* Letras blancas como pediste */
+  font-family: 'Special-Gothic', sans-serif;
+  font-size: 42pt;
   line-height: 1.1;
   letter-spacing: 2px;
   text-align: center;
@@ -3028,4 +2924,188 @@ img {
   letter-spacing: 0;
   line-height: 1;
   margin: 0;
+}
+
+/* ----- Responsive tienda ----- */
+
+@media (max-width: 900px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .shop-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ----- Responsive producto ----- */
+@media (max-width: 800px) {
+  .pd-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-miniaturas {
+    flex-direction: row;
+  }
+
+  .pd-mini {
+    width: 90px;
+    height: 110px;
+  }
+
+  .pd-principal {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 550 / 692;
+  }
+
+  .pd-menu {
+    gap: 24px;
+  }
+
+  .pd-lb-flecha {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+
+  .pd-lb-anterior {
+    left: 8px;
+  }
+
+  .pd-lb-siguiente {
+    right: 8px;
+  }
+}
+
+/* ----- Responsive socios ----- */
+@media (max-width: 800px) {
+  .socios-main {
+    grid-template-columns: 1fr;
+  }
+
+  .socios-header,
+  .socios-intro,
+  .socios-columna,
+  .socios-banner {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .socios-banner {
+    max-width: 300px;
+    margin: 0 auto;
+    min-height: 0;
+  }
+
+  .socios-banner img {
+    position: static;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-caja {
+    padding: 24px 18px 28px;
+  }
+
+  .sp-panel {
+    gap: 18px;
+    padding: 22px 14px;
+  }
+
+  .sp-circulo {
+    margin-bottom: 40px;
+  }
+}
+
+/* Ocultar el checkbox y el botón hamburguesa por defecto en desktop */
+.menu-toggle-checkbox,
+.menu-burger-btn {
+  display: none;
+}
+
+/* Adaptación para pantallas chicas / dispositivos móviles */
+@media (max-width: 992px) {
+  /* Mostrar el botón hamburguesa */
+  .menu-burger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-burger-btn img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  /* Asegurar que la barra de navegación se acomode en columna */
+  .nav-index {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* Ocultar menús y botones principales en móvil hasta que se active el toggle */
+  .lista-menu,
+  .botones-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 15px;
+    gap: 16px;
+  }
+
+  .botones-nav {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 15px;
+    padding-top: 20px;
+  }
+
+  /* MAGIA CSS: Al hacer clic en el input checkbox, se despliega el menú */
+  .menu-toggle-checkbox:checked ~ .lista-menu,
+  .menu-toggle-checkbox:checked ~ .botones-nav {
+    display: flex;
+  }
+}
+
+/* Ajustes responsivos específicos para la sección de la noticia */
+@media (max-width: 900px) {
+  .articulo-noticia {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .titulo-hero-noticia {
+    font-size: 28pt;
+    bottom: 25px;
+  }
+}@media (max-width: 768px) {
+  .contenido-footer {
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 20px;
+  }
+
+  .copyright-footer {
+    width: 100%;
+  }
+
+  .redes-sociales {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
 }

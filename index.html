@@ -9,7 +9,7 @@
   <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body> 
   <header class="cabecera">
     <nav class="nav-index">
 
@@ -75,18 +75,15 @@
     </nav>
   </header>
 
-  <!-- Acá comienza el main -->
 
   <main>
 
-    <!-- Acá comienza la section hero -->
-
+    <!-- HERO -->
     <section class="hero-index">
 
       <video autoplay muted loop playsinline width="1920" height="850" class="video-fondo">
         <source src="imgs/index/vid/video-hero.mp4" type="video/mp4">
         Tu navegador no soporta videos HTML5.
-        <!-- Texto de respaldo por si no se reproduce el video -->
       </video>
 
       <div class="hero-overlay"></div>
@@ -107,7 +104,6 @@
           <span>¡VAMOS TRICO!</span>
           <span>¡VAMOS TRICO!</span>
           <span>¡VAMOS TRICO!</span>
-          <!-- Duplicado para que funcione el scroll infinito -->
           <span>¡VAMOS TRICO!</span>
           <span>¡VAMOS TRICO!</span>
           <span>¡VAMOS TRICO!</span>
@@ -124,15 +120,13 @@
       </button>
     </section>
 
-    <!-- Acá comienza la section noticias -->
+    <!-- NOTICIAS -->
 
     <section id="noticias" class="seccion-noticias"
       style="background-image: url('imgs/fondos/fondo-section-noticias.png');">
       <div class="ultimas-noticias">
 
-        <!-- CARD 1: CARRUSEL NOTICIAS -->
         <div class="card-noticias-1">
-          <!-- Diapositiva 1 -->
           <div class="slide-noticia slide-1">
             <img src="imgs/index/img/card-noticias-partido.png" alt="Los 3 puntos en casa" width="811" height="622"
               class="img-slide">
@@ -148,7 +142,6 @@
             </div>
           </div>
 
-          <!-- Diapositiva 2 (Tanque Silva con enlace) -->
           <a href="noticia-silva.html" class="slide-noticia slide-2">
             <img src="imgs/index/img/card-noticias-silva.png" alt="El Tanque trae goles" width="811" height="622"
               class="img-slide">
@@ -164,7 +157,6 @@
             </div>
           </a>
 
-          <!-- Diapositiva 3 -->
           <div class="slide-noticia slide-3">
             <img src="imgs/index/img/card-noticias-sum.png" alt="Tenemos nuevo SUM" width="811" height="622"
               class="img-slide">
@@ -181,13 +173,10 @@
           </div>
         </div>
 
-        <!-- COLUMNA DERECHA -->
         <div class="columna-derecha-noticias">
 
-          <!-- CARD 2: SIGUIENTE PARTIDO -->
           <div class="card-noticias-2">
             <div class="frame-card-siguiente-partido">
-              <!-- Texto e icono superior centrado -->
               <div class="frame-txt-siguiente-partido">
                 <img src="imgs/index/img/logo-primerab.png" alt="Liga" width="36" height="36" class="logo-liga">
                 <div class="info-partido-sup">
@@ -212,7 +201,6 @@
             </div>
           </div>
 
-          <!-- CARD 3: PUBLICIDAD SOCIO -->
           <div class="card-publicidad">
             <img src="imgs/index/img/card-hacete-socio.png" alt="Hacete socio del trico" width="579" height="275"
               class="img-publicidad">
@@ -223,8 +211,7 @@
       </div>
     </section>
 
-    <!-- Acá comienza la section plantel -->
-
+    <!-- PLANTEL -->
     <section id="plantel" class="seccion-plantel">
 
       <div class="plantel-contenedor-general">
@@ -238,11 +225,9 @@
           <a href="futbol-plantel.html" class="btn-plantel-completo">Plantel completo &rarr;</a>
         </div>
 
-        <!-- Wrapper principal del Carrusel -->
         <div class="carousel-wrapper-plantel-de-jugadores">
           <div class="plantel-jugadores-completo">
 
-            <!-- Lista de jugadores. Para evitar usar javascript, usamos input, cada posición es un radio oculto y las flechas son labels -->
             <input type="radio" name="galeria-jugadores" id="jug-0" class="gal-radio" checked>
             <input type="radio" name="galeria-jugadores" id="jug-1" class="gal-radio">
             <input type="radio" name="galeria-jugadores" id="jug-2" class="gal-radio">
@@ -400,7 +385,6 @@
 
             </ul>
 
-            <!-- Botonera inferior centrada -->
             <div class="plantel-profesional-botones">
               <div class="par-flechas par-jug-0"><span class="flecha-btn flecha-off"><img
                     src="imgs/index/img/flecha-scroll-izq.svg" alt="Izquierda" width="41" height="41"></span><label
@@ -446,9 +430,7 @@
 
     </section>
 
-    <!-- Acá comienza la section shop del index -->
-
-    <!-- El fondo del shop está en .bloque-shop para que el banner quede sobre el mismo fondo -->
+    <!-- SHOP -->
     <div class="bloque-shop">
 
       <section id="shop" class="seccion-shop">
@@ -464,11 +446,9 @@
             <a href="shop.html" class="btn-shop-completo">Ir a la tienda &rarr;</a>
           </div>
 
-          <!-- Wrapper principal del Carrusel -->
           <div class="carrusel-wrapper-shop">
             <div class="contenedor-shop">
 
-              <!-- Galería sin JavaScript. Mismo criterio que con la section del plantel: Para evitar usar javascript, usamos input, cada posición es un radio oculto y las flechas son labels -->
               <input type="radio" name="galeria-productos" id="prod-0" class="gal-radio" checked>
               <input type="radio" name="galeria-productos" id="prod-1" class="gal-radio">
               <input type="radio" name="galeria-productos" id="prod-2" class="gal-radio">
@@ -604,20 +584,15 @@
 
     </div>
 
-    <!-- Acá arranca el pop-up del chat-bot-->
-
-    <!-- Componente del Chatbot flotante -->
+    <!-- CHAT-BOT-->
     <div class="chatbot-container">
 
-      <!-- Checkbox oculto que controla el estado del popup -->
       <input type="checkbox" id="toggle-chatbot" class="chatbot-checkbox">
 
-      <!-- Botón flotante que activa el popup -->
       <label for="toggle-chatbot" class="chatbot-btn-flotante" aria-label="Abrir Chatbot">
         <img src="imgs/chat-bot/chat-bot-icon.svg" alt="Vicó-Bot" width="53" height="71" class="chatbot-icon-btn">
       </label>
 
-      <!-- Ventana Pop-up del Chat -->
       <div class="chatbot-popup">
 
         <div class="chatbot-header">
@@ -625,7 +600,6 @@
           <label for="toggle-chatbot" class="chatbot-close-btn" aria-label="Cerrar Chat">&times;</label>
         </div>
 
-        <!-- Cuerpo de Mensajes -->
         <div class="chatbot-body">
           <div class="chatbot-mensaje-container">
             <img src="imgs/chat-bot/chat-bot-icon-message.svg" alt="Vicó" width="53" height="71"
@@ -636,7 +610,6 @@
           </div>
         </div>
 
-        <!-- Pie de Chat con input de texto funcional. Acá recurrimos a la IA para entender y poder resolverlo -->
         <div class="chatbot-footer">
           <form class="chatbot-form" onsubmit="event.preventDefault();">
             <input type="text" class="chatbot-input" placeholder="Escribí tu mensaje..." autocomplete="off">
@@ -649,7 +622,7 @@
 
   </main>
 
-  <!-- Acá comienza el footer -->
+  <!-- FOOTER -->
 
   <footer class="footer-index">
 
@@ -668,7 +641,6 @@
         <img src="imgs/footer/sponsors/sportsbet-logo.svg" alt="Sportsbet.io" class="sponsor-logo" width="169"
           height="35">
 
-        <!-- Duplicado para el scroll infinito de los sponsors -->
         <img src="imgs/footer/sponsors/mi-cabana-logo.svg" alt="Mi Cabaña Longchamps" class="sponsor-logo" width="143"
           height="43">
         <img src="imgs/footer/sponsors/colorshop-logo.svg" alt="Colorshop" class="sponsor-logo" width="147" height="35">
